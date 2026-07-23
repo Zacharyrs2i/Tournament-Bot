@@ -31,7 +31,7 @@ class TeamRosterCog(commands.Cog):
         timezone_name="Team time zone, such as America/Chicago",
         team_role="Discord role associated with this team",
     )
-    @is_admin
+    @is_admin()
     async def create_team(
         self,
         interaction: discord.Interaction,
@@ -62,7 +62,7 @@ class TeamRosterCog(commands.Cog):
         player="Discord member to roster",
         steam_id="Player Steam ID; use N/A temporarily if unavailable",
     )
-    @is_team_manager
+    @is_team_manager()
     async def roster_add(
         self,
         interaction: discord.Interaction,
@@ -104,7 +104,7 @@ class TeamRosterCog(commands.Cog):
         team_name="Official team name",
         player="Discord member to remove",
     )
-    @is_team_manager
+    @is_team_manager()
     async def roster_remove(
         self,
         interaction: discord.Interaction,
@@ -136,7 +136,7 @@ class TeamRosterCog(commands.Cog):
         team_name="Official team name",
         player="Rostered Discord member",
     )
-    @is_team_manager
+    @is_team_manager()
     async def representative_add(
         self,
         interaction: discord.Interaction,
@@ -170,7 +170,7 @@ class TeamRosterCog(commands.Cog):
         team_name="Official team name",
         player="Current team representative",
     )
-    @is_team_manager
+    @is_team_manager()
     async def representative_remove(
         self,
         interaction: discord.Interaction,
